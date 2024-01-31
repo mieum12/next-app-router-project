@@ -7,8 +7,7 @@
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    color: #ddd6cb;
-    background: linear-gradient(90deg, #2c1e19, #25200f);
+    background: linear-gradient(90deg, #e5daef, #e5daef);
 }
 
 .headerText {
@@ -23,7 +22,6 @@
 
 .headerText p {
     font-size: 0.75rem;
-    color: #cfa69b;
     font-style: italic;
 }
 
@@ -62,7 +60,7 @@
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background: linear-gradient(90deg, #f9572a, #ff9b05);
+    background: linear-gradient(90deg, #ad84b9, #665b94);
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
@@ -70,6 +68,6 @@
 
 .actions a:hover,
 .actions a:active {
-    background: linear-gradient(90deg, #fd4715, #f9b241);
-    box-shadow: 0 0 12px rgba(242, 100, 18, 0.8);
+    background: linear-gradient(90deg, #ce9cdc, #7e71bb);
+    box-shadow: 0 0 12px rgba(145, 145, 145, 0.8);
 }

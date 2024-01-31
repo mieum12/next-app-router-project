@@ -4,7 +4,7 @@ import Image from 'next/image';
 import classes from './prescription-item.module.css';
 export default function PrescriptionItem({ title, slug, image, summary, creator }) {
   return (
-    <article className={classes.meal}>
+    <article className={classes.prescription}>
       <header>
         <div className={classes.image}>
           <Image src={image} alt={title} fill />
