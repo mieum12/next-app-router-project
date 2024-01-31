@@ -1,4 +1,5 @@
 import './globals.css'
+import MainHeader from "@/components/main-header";
 
 // <head>에 들어가는 정보, 메타데이터는 여기 변수로 관리된다
 export const metadata = {
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
         ></path>
       </svg>
     </div>
-
+    <MainHeader/>
     {children}
     </body>
     </html>
