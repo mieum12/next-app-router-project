@@ -1,5 +1,5 @@
 const sql = require('better-sqlite3');
-const db = sql('prescription.db');
+const db = sql('prescriptions.db');
 // node initdb 를 터미널에 입력해 db를 얻는다
 
 const dummyPrescriptions = [
@@ -127,7 +127,7 @@ const dummyPrescriptions = [
 ];
 
 db.prepare(`
-   CREATE TABLE IF NOT EXISTS meals (
+   CREATE TABLE IF NOT EXISTS prescriptions (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        slug TEXT NOT NULL UNIQUE,
        title TEXT NOT NULL,
@@ -158,4 +158,43 @@ async function initData() {
   }
 }
 
-await initData();
+// 1)
+// initData();
+// Node.js에서 모듈을 로딩하면 해당 모듈이 실행되기 전에
+// 최상위 수준의 코드(최상위 레벨에 있는 코드)가 실행됩니다.
+// 따라서 initData();를 최상위 수준에서 호출하면 initData 함수가 실행되고
+// 초기 데이터가 데이터베이스에 추가될 것입니다.
+//
+// 일반적으로 비동기 작업이 필요한 경우에는 await와 함께 async 함수를 사용해야 하지만,
+// 모듈 수준에서 최상위 코드를 실행하는 경우, 비동기 함수를 사용하지 않고도
+// 코드가 올바르게 동작할 수 있습니다.
+// 하지만 이런 방식은 코드의 가독성과 유지보수성에 영향을 줄 수 있으므로,
+// 가능하면 명시적인 비동기 패턴을 사용하는 것이 좋습니다.
+
+// 2)
+// 이렇게!!
+
+(async () => {
+  await initData();
+})();
+//
+// 이 경우에도 async IIFE(Imediately Invoked Function Expression)를 사용하는 것이 좋습니다.
+// 코드의 의도가 더 명확해지며, 향후 수정이나 유지보수 시에 예상치 못한 문제를 방지할 수 있습니다.
+
+// 🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨 나의 에러 🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
+// 근데 그냥 initData();로 썼을 때 밑줄이 가며
+// `Promise returned from initData is ignored` 이런 에러 발생
+// ->
+// await initData(); // 으로 고침
+// 이렇게 한 후 실행했더니 db가 생기지 않음!!
+
+//해결!!!
+// 챗지피티에 물어본 결과...!
+// await를 사용하려면 해당 부분이 포함된 코드를 비동기 함수 내에서 실행해야 합니다.
+//   그리고 파일 전체를 직접 실행하는 것이 아니라,
+//   다른 파일에서 불러와서 실행하는 경우에만 await를 사용할 수 있습니다.
+//   initData 함수를 비동기로 선언하고, 마지막 부분에서 await를 사용하는 부분을
+// async 함수 내에서 호출하도록 수정했습니다.
+
+
+

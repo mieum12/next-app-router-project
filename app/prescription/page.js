@@ -1,8 +1,11 @@
 import classes from "./page.module.css";
 import Link from "next/link";
 import PrescriptionGrid from "@/components/prescription/prescription-grid";
+import {getPrescriptions} from "@/lib/prescription";
 
-export default function PrescriptionPage() {
+export default async function PrescriptionPage() {
+  // Next.js에서 useEffect나 fetch 없이 데이터를 가져오는 방법
+  const prescriptions = await getPrescriptions()
   return (
     <>
     <header className={classes.header}>
@@ -18,7 +21,7 @@ export default function PrescriptionPage() {
       </p>
     </header>
     <main className={classes.main}>
-      <PrescriptionGrid prescriptions={[]}/>
+      <PrescriptionGrid prescriptions={prescriptions}/>
     </main>
     </>
   )
