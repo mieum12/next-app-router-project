@@ -2,9 +2,12 @@ import Link from "next/link";
 import logoImg from "@/assets/logo.png"
 import classes from './main-header.module.css'
 import Image from "next/image";
+import MainHeaderBackground from "@/components/main-header/main-header-background";
 
 export default function MainHeader() {
   return (
+    <>
+      <MainHeaderBackground/>
     <header className={classes.header}>
       <Link className={classes.logo} href='/'>
         {/*
@@ -12,19 +15,20 @@ export default function MainHeader() {
         png가 아닌 wenp로 온다
         */}
         <Image src={logoImg.src} alt='음식사진' width={100} height={100} priority/>
-        NextLevel Food
+        마음처방전
       </Link>
 
       <nav className={classes.nav}>
         <ul>
           <li>
-            <Link href='/meals'>Browse Meals</Link>
+            <Link href='/prescription'>Browse prescription</Link>
           </li>
           <li>
-            <Link href='/community'>Foodies Community</Link>
+            <Link href='/community'>Community</Link>
           </li>
         </ul>
       </nav>
     </header>
+    </>
   )
 }
