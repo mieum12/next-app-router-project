@@ -31,18 +31,19 @@
 
 .nav a:hover,
 .nav a:active {
-    background: linear-gradient(90deg, #f1f1f1, #f1f1f1);
+    background: linear-gradient(90deg, #2d2256, #2d2256);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 18px #48416b;
+    text-shadow: 0 0 18px #200826;
 }
 
 .active {
-    background: linear-gradient(90deg, #f1f1f1, #f1f1f1);
+    background: linear-gradient(90deg, #2d2256, #2d2256);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 18px #200826;
 }
 
 .logo {
