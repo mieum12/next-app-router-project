@@ -21,7 +21,6 @@
 
 .headerText {
     padding: 0.5rem 1rem 0 1rem;
-    color: #ddd6cb;
     max-width: 40rem;
     animation: fade-slide-in-from-right 1s ease-out forwards;
 }
@@ -31,17 +30,16 @@
     font-size: 3.5rem;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.5rem rgb(255, 255, 255);
 }
 
 .creator {
     font-size: 1.5rem;
-    color: #cfa69b;
     font-style: italic;
 }
 
 .creator a {
-    background: linear-gradient(90deg, #f9572a, #ff8a05);
+    background: linear-gradient(90deg, #ad84b9, #665b94);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -49,11 +47,11 @@
 
 .creator a:hover,
 .creator a:active {
-    background: linear-gradient(90deg, #f9572a, #ff8a05);
+    background: linear-gradient(90deg, #ce9cdc, #7e71bb);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 18px rgba(248, 190, 42, 0.8);
+    text-shadow: 0 0 18px rgb(140, 140, 140);
 }
 
 .summary {
@@ -63,8 +61,8 @@
 .instructions {
     font-size: 1.25rem;
     line-height: 1.5;
-    background-color: #6e6464;
-    color: #13120f;
+    background: linear-gradient(90deg, #9b74a6, #7e71bb);
+    color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
     padding: 2rem;
