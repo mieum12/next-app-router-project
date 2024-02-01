@@ -1,12 +1,20 @@
 import classes from "./page.module.css";
 import Image from "next/image";
 import {getPrescription} from "@/lib/prescription";
+import {notFound} from "next/navigation";
 
 export default function PrescriptionDetailPage({params}) {
 
   // params.prescriptionSlug은
   // [prescriptionSlug]폴더 이름이 key가 되어 해당 value를 찾는 것이다
   const prescription = getPrescription(params.prescriptionSlug)
+
+  // 어떻게 보면 404에 대한 에러 -> 없는 경로로 겟물을 보려고 한다
+  // notFound 내장 함수는 이컴포넌트를 멈추고
+  // 가장 가까이에 있는 not-found 페이지를 보여준다
+  if(!prescription){
+    notFound()
+  }
 
   //줄바꿈을 찾아서 진짜 줄바꿈을 해준다
   prescription.instructions = prescription.instructions.replace(/\n/g, '<br/>')
