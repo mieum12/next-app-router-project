@@ -20,13 +20,13 @@ export default async function PrescriptionPage() {
     <>
     <header className={classes.header}>
       <h1>
-        마음을 치료하는 곳:
-        <span className={classes.highlight}> 마음처방전</span>
+        A place for healing the mind:
+        <span className={classes.highlight}> Mind Prescription</span>
       </h1>
-      <p>사람들의 처방전을 참고해보세요</p>
+      <p>Check out prescriptions from others.</p>
       <p className={classes.cta}>
         <Link href='./prescription/share'>
-          나의 처방전도 공유해보세요!
+          Share your own prescription too!
         </Link>
       </p>
     </header>
