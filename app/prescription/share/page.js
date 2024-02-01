@@ -1,8 +1,8 @@
 import classes from './page.module.css'
 import ImagePicker from "@/components/prescription/image-picker";
 import {submitForm} from "@/lib/action";
+import PrescriptionFormSubmitButton from "@/components/prescription/prescription-form-submit";
 export default function SharePrescriptionPage() {
-
 
   return (
     <>
@@ -43,7 +43,7 @@ export default function SharePrescriptionPage() {
           </p>
           <ImagePicker label='user image' name='image'/>
           <p className={classes.actions}>
-            <button type="submit">Share Prescription</button>
+            <PrescriptionFormSubmitButton/>
           </p>
         </form>
       </main>
