@@ -1,4 +1,5 @@
 import classes from './page.module.css'
+import ImagePicker from "@/components/prescription/image-picker";
 export default function SharePrescriptionPage() {
   return (
     <>
@@ -37,7 +38,7 @@ export default function SharePrescriptionPage() {
               required
             ></textarea>
           </p>
-          IMAGE PICKER
+          <ImagePicker/>
           <p className={classes.actions}>
             <button type="submit">Share Prescription</button>
           </p>
