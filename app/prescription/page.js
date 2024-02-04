@@ -5,6 +5,12 @@ import {getPrescriptions} from "@/lib/prescription";
 import {Suspense} from "react";
 import LoadingPage from "@/app/prescription/loading-out";
 
+// 정적 메타데이터 추가
+export const metadata = {
+  title: '전체 처방전',
+  description: '커뮤니티에 올라온 다양한 처방전을 둘러보세요.',
+};
+
 // 데이터를 가져오는 부분을 분리된 컴포넌트로 아웃소싱
 // 아래에 Suspense로 감싸준다
 // suspense는 데이터가 올때까지 로딩상태를 처리하고 대체 컨텐츠(fallback)를 표시할 수 있음

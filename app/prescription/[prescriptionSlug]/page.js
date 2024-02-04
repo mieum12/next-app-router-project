@@ -3,6 +3,21 @@ import Image from "next/image";
 import {getPrescription} from "@/lib/prescription";
 import {notFound} from "next/navigation";
 
+// 동적 페이지에서 메타데이터 추가하기
+export async function generateMetadata({params}) {
+  const prescription = getPrescription(params.prescriptionSlug)
+
+  // 메타데이터 생성에 실패한 경우
+  if(!prescription){
+    notFound()
+  }
+
+  return {
+    title: prescription.title,
+    description: prescription.summary,
+  }
+}
+
 export default function PrescriptionDetailPage({params}) {
 
   // params.prescriptionSlug은
