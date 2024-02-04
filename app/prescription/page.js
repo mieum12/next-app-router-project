@@ -9,6 +9,7 @@ import LoadingPage from "@/app/prescription/loading-out";
 // 아래에 Suspense로 감싸준다
 // suspense는 데이터가 올때까지 로딩상태를 처리하고 대체 컨텐츠(fallback)를 표시할 수 있음
 async function Prescription() {
+  console.log('fetching data 🏃🏻‍💨...')
   const prescription = await getPrescriptions()
   return <PrescriptionGrid prescriptions={prescription}/>
 }
