@@ -1,5 +1,7 @@
 # Next.js로 만드는 웹 페이지
 
+App router의 방식 사용
+
 ### 🔸 Next.js bulid 시 캐싱 구축 및 이해
 
 넥스트는 공격적인 캐싱을 한다.
